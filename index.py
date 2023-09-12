@@ -1,6 +1,6 @@
 #Provides a way to provide the platform
 import os
-
+ 
 #This is the directory where the files are located 
 os.chdir('/Users/willh/Downloads/')
 
