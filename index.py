@@ -2,7 +2,7 @@ import os
 
 os.chdir('/Users/willh/Downloads/')
 
-try:
+try: 
     total_requests = 0
     with open("logfile.txt", "r") as file:
         for line in file:
