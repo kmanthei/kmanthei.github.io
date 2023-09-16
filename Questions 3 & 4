@@ -1,6 +1,7 @@
 import os
 os.chdir('/Users/kailimanthei/Downloads')
 
+#Question 3
 #opening the log file from personal directory
 original_log_file = 'log.txt'
 
@@ -18,7 +19,7 @@ with open(original_log_file, 'r') as log_file:
             status_code = int(line.split()[2])  
             total_requests += 1
 
-# this checks if it is in the 4xx range of being unsuccesful 
+# this checks if it is in the 4xx range of being unsuccessful 
             if str(status_code) in unsuccessful_status_codes:
                 unsuccessful_requests += 1
         except (IndexError, ValueError):
@@ -33,7 +34,7 @@ else:
 print(f"The percentage of unsuccessful requests (4xx status codes) is: {unsuccessful_percentage:.2f}%")
 
 
-
+#Question 4
 # this is referring to the log file that is downloaded on my laptop
 original_log_file = 'log.txt'
 
@@ -56,3 +57,12 @@ with open(original_log_file, 'r') as log_file:
                 redirected_requests += 1
         except (IndexError, ValueError):
             pass
+
+# this turns the decimal into a percentage by dividing the redirected requests by total and multiplying by 100
+if total_requests > 0:
+    redirection_percentage = (redirected_requests / total_requests) * 100
+else:
+    redirection_percentage = 0.0  
+
+print(f"The percentage of redirected requests (3xx status codes) is: {redirection_percentage:.2f}%")
+
