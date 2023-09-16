@@ -1,0 +1,7 @@
+import os
+os.chdir('/Users/kailimanthei/Downloads')
+
+original_log_file = 'log.txt'
+unsuccessful_status_codes = [str(code) for code in range(400, 499)]
+total_requests = 0
+unsuccessful_requests = 0
