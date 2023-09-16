@@ -23,3 +23,11 @@ with open(original_log_file, 'r') as log_file:
                 unsuccessful_requests += 1
         except (IndexError, ValueError):
             pass
+
+# this will turn the decimal answer into a percentage by dividing the unsuccessful requests by total requests and multiplying by 100
+if total_requests > 0:
+    unsuccessful_percentage = (unsuccessful_requests / total_requests) * 100
+else:
+    unsuccessful_percentage = 0.0  
+
+print(f"The percentage of unsuccessful requests (4xx status codes) is: {unsuccessful_percentage:.2f}%")
