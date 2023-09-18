@@ -2,7 +2,7 @@ import os
 os.chdir('/Users/kailimanthei/Downloads')
 
 #Question 3
-#opening the log file from personal directory
+#opening the log file from personal directory 
 original_log_file = 'log.txt'
 
 #status code 4xx involves bad request, unauthorized, forbidden, and not found, here we are setting the range for python to look for which is 400-499
