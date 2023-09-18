@@ -40,10 +40,10 @@ with open('3.1 Four dimensions of service management.txt') as f:
     cnts = Counter(l.strip() for l in f)
 
 # Display 3 most common lines
-cnts.requested(1)
+cnts.mostcommon(1)
 
 # Display 3 least common lines
-cnts.requested()[-1:]
+cnts.most_common()[-1:]
 
 
 #This will show the amount it finds in the code 
@@ -52,8 +52,8 @@ print("The total length is:", total_requests)
 print("The total length in the past six months is:", six_months)
 
 # Answer for questions 5 and 6 on Group Project #4 Log Paarsing in Python Part 2
-print(" the least requested list is:", cnts.requested(1))
-print(" the most requested list it:", cnts.requested()[-1:])
+print(" the least requested list is:", cnts.most_common(1))
+print(" the most requested list it:", cnts.most_common()[-1:])
 
 
 
