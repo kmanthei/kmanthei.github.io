@@ -7,6 +7,7 @@ requests_per_day = defaultdict(int)
 requests_per_week = defaultdict(int)
 requests_per_month = defaultdict(int)
 
+# Change log path to go to where your file is logatdd)
 log_file_path = "/Users/egrace/Downloads/logfile.txt"
 
 try:
@@ -34,7 +35,7 @@ for log_entry in log_data:
         requests_per_week[week_number] += 1
         requests_per_month[month_year] += 1
 
-
+# Shows the answer for questions 1 and 2
 print("Requests per day:")
 for date, count in requests_per_day.items():
     print(f"{date}: {count}")
