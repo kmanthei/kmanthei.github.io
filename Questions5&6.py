@@ -12,7 +12,7 @@ with open('3.1 Four dimensions of service management.txt') as f:
     cnts = Counter(l.strip() for l in f)
 
 # Display most common lines
-cnts.mostcommon(1)
+cnts.most_common(1)
 
 
 # Display least common lines
