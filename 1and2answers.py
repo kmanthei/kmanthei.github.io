@@ -29,7 +29,7 @@ for log_entry in log_data:
     if match:
         date = match.group(1)
 
-       
+#this will split the day, month, and year wherever the backslash is        
         day, month, year = date.split('/')
         week_number = f"{year}-{month}-{day}"
         month_year = f"{year}-{month}"
