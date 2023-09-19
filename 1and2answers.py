@@ -10,6 +10,9 @@ requests_per_month = defaultdict(int)
 # Change log path to go to where your file is logatdd)
 log_file_path = "/Users/egrace/Downloads/logfile.txt"
 
+#This will open the log file and assign it a variable as log_file
+#With this loop if the log file is not found, then it will return a message letting the user know to check the location
+
 try:
     with open(log_file_path, 'r') as log_file:
         log_data = log_file.readlines()
