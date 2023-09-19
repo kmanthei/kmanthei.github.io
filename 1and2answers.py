@@ -20,7 +20,8 @@ except FileNotFoundError:
     print(f"File '{log_file_path}' not found. Make sure the file exists in the correct location.")
     exit()
 
-
+#this is assigning the data_pattern variable to the function that is called compile regex pattern
+#this will search for the specified pattern
 date_pattern = re.compile(r'\[(\d{2}/\w+/\d{4}):')
 
 for log_entry in log_data:
