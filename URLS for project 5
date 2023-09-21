@@ -1,0 +1,7 @@
+Urls for project 5
+
+
+http://localhost:4000/md5/your_string 
+http://localhost:4000/factorial/your_number
+http://localhost:4000/fibonacci/your_number
+http://localhost:4000/is-prime/your_number 
