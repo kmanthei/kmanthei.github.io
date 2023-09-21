@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import hashlib
 import math
 
+# String for mdd5
 app = Flask(__name__)
 
 @app.route('/md5/<string:text>', methods=['GET'])
@@ -9,6 +10,7 @@ def calculate_md5(text):
     md5_hash = hashlib.md5(text.encode()).hexdigest()
     return jsonify({"md5_hash": md5_hash})
 
+#String for factorial
 @app.route('/factorial/<int:num>', methods=['GET'])
 def calculate_factorial(num):
     if num < 0:
@@ -20,6 +22,7 @@ def calculate_factorial(num):
     except ValueError:
         return jsonify({"error": "Invalid input. Please provide a valid non-negative integer."}), 400
 
+#String for fibonacci
 @app.route('/fibonacci/<int:num>', methods=['GET'])
 def calculate_fibonacci(num):
     def fibonacci(n):
@@ -31,6 +34,7 @@ def calculate_fibonacci(num):
     fibonacci_sequence = [fibonacci(i) for i in range(num+1)]
     return jsonify({"fibonacci_sequence": fibonacci_sequence})
 
+#String for is-prime
 @app.route('/is-prime/<int:num>', methods=['GET'])
 def check_prime(num):
     def is_prime(n):
@@ -44,6 +48,7 @@ def check_prime(num):
     is_prime_result = is_prime(num)
     return jsonify({"is_prime": is_prime_result})
 
+#String for slack alert
 @app.route('/slack-alert/<string:message>', methods=['POST'])
 def send_slack_alert(message):
    
