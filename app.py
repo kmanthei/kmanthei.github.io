@@ -46,9 +46,7 @@ def check_prime(num):
 
 @app.route('/slack-alert/<string:message>', methods=['POST'])
 def send_slack_alert(message):
-    # Replace this with your code to send a Slack alert
-    # You can use a Slack API or a Python package for this purpose
-    # For simplicity, we'll just return a success message
+   
     return jsonify({"message": f"Slack alert sent: {message}"})
 
 if __name__ == '__main__':
