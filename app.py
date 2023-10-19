@@ -1,3 +1,5 @@
+#All Strings created and implemented by Eden Ramos for Project 5
+
 from flask import Flask, request, jsonify
 import hashlib
 import math
@@ -56,3 +58,8 @@ def send_slack_alert(message):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4000)
+
+
+#Slack 
+
+curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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 
