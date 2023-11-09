@@ -1,0 +1,29 @@
+import requests
+
+base_url = 'http://localhost:4000'  # Update this with the actual URL of your API
+
+# Test the /md5 endpoint
+md5_response = requests.get(f'{base_url}/md5/Hello%20World')
+print('/md5 response:')
+print(md5_response.json())
+
+# Test the /factorial endpoint
+factorial_response = requests.get(f'{base_url}/factorial/5')
+print('/factorial response:')
+print(factorial_response.json())
+
+# Test the /fibonacci endpoint
+fibonacci_response = requests.get(f'{base_url}/fibonacci/10')
+print('/fibonacci response:')
+print(fibonacci_response.json())
+
+# Test the /is-prime endpoint
+is_prime_response = requests.get(f'{base_url}/is-prime/7')
+print('/is-prime response:')
+print(is_prime_response.json())
+
+# Test the /slack-alert endpoint
+slack_alert_response = requests.post(f'{base_url}/slack-alert/Hello%20from%20API')
+print('/slack-alert response:')
+print(slack_alert_response.json())
+
