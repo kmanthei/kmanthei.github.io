@@ -2,7 +2,7 @@ import requests
 
 errors = 0
 
-base_url = 'http://localhost:4000'  # Update this with the actual URL of your API
+base_url = 'https://hooks.slack.com/services/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' 
 
 # Test the /md5 endpoint
 md5_response = requests.get(f'{base_url}/md5/Hello%20World')
@@ -14,7 +14,7 @@ if expected_result != test_result['output']:
 
 # Test the /factorial endpoint
 factorial_response = requests.get(f'{base_url}/factorial/5')
-expected_result2 = "b10a8db164e0754105b7a99be72e3fe5"
+expected_result2 = "120"
 test_result2 = factorial_result.json()
 print(f'factorial response: {test_result2["output"]}')
 if expected_result2 != test_result2['output']:
@@ -23,7 +23,7 @@ if expected_result2 != test_result2['output']:
 
 # Test the /fibonacci endpoint
 fibonacci_response = requests.get(f'{base_url}/fibonacci/10')
-expected_result3 = "b10a8db164e0754105b7a99be72e3fe5"
+expected_result3 = "34"
 test_result3 = fibonacci_response.json()
 print(f'fibonacci response: {test_result3["output"]}')
 if expected_result3 != test_result3['output']:
@@ -32,7 +32,7 @@ if expected_result3 != test_result3['output']:
 
 # Test the /is-prime endpoint
 is_prime_response = requests.get(f'{base_url}/is-prime/7')
-expected_result4 = "b10a8db164e0754105b7a99be72e3fe5"
+expected_result4 = "True"
 test_result4 = is_prime_response.json()
 print(f'is prime response: {test_result4["output"]}')
 if expected_result4 != test_result4['output']:
@@ -40,8 +40,10 @@ if expected_result4 != test_result4['output']:
 
 # Test the /slack-alert endpoint
 slack_alert_response = requests.post(f'{base_url}/slack-alert/Hello%20from%20API')
-expected_result5 = "b10a8db164e0754105b7a99be72e3fe5"
+expected_result5 = "Hello from API"
 test_result5 = slack_alert_response.json()
 print(f'slack result: {test_result5["output"]}')
 if expected_result5 != test_result5['output']:
     errors = errors + 1
+
+print(f"There are {errors} in this code")
