@@ -36,37 +36,16 @@ def is_prime(n):
             return jsonify(input=n, output=False)
     return jsonify(input=n, output=True)
 
-@app.route("/slack-alert/<string>")
-import requests 
-import sys
-import getopt
-
-#Send Slack Message using Slack APUI 
-
+@app.route("/slack-alert/<string:message>")
 def send_slack_message(message):
 	payload = '{"text":"%s"}' % message
 	response = requests.post('https://hooks.slack.com/services/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',
 							 data=payload)
-	print(response.text)
-def main(argv):
+	if response.status_code == 200:
+		result = True
+	else:
+		result = False 
+	return jsonify(input=message, output=result)
 
-	message = ''
-	
-	try: opts, args = getopt.getopt(argv, "hm:" , ["message="])
-	
-	except getopt.GetoptError:
-		print('Slackmessage.py -m <message>')
-		sys.exit(2)
-	if len(opts) == 0:
-		message = "HELLO, WORLD!"
-	for opt, arg in opts:
-		if opt == '-h' :
-			print('SlackMessage.py -m <message>')
-			sys.exit()
-		elif opt in ("-m", "--message"):
-			message = arg
-			
-	send_slack_message(message)
-	
 if __name__ == "__main__":
-	main(sys.argv[1:])
+	app.run(host='0.0.0.0', port=4000)
