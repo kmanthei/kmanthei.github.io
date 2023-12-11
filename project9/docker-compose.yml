@@ -5,7 +5,7 @@ services:
     # replace username/repo:tag with your name and image details
     #image: username/repo:tag
     ports:
-      - "8080:4000"
+      - "80:4000"
     networks:
       - webnet
   
