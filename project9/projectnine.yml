@@ -1,0 +1,16 @@
+version: '2'
+services:
+  api:
+    image: project nine
+    build:
+      context: ./api-service
+      dockerfile: Dockerfile 
+    container_name: api-service
+    command: python3 hello-world.py
+    
+  ngnix-server: 
+    image: ngnix
+    container: ngnix-seerver
+    ports:
+      - 4000:4000
+    
