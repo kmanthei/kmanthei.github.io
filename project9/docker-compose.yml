@@ -4,11 +4,15 @@ services:
     build: .
     # replace username/repo:tag with your name and image details
     #image: username/repo:tag
+    environment: 
+      -REDIS_HOST= redis-13863.c267.us-east-1-4.ec2.cloud.redislabs.com:13863
+      -REDIS_PWD=3nfZerREKXfRZlzDPRBcZOu6EMqrnInZ
     ports:
       - "80:4000"
     networks:
       - webnet
-  
+  logging: 
+    driver: json-file
   redis-server:
     image: redis
     networks: 
